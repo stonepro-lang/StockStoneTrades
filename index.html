@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>StockStoneTrades</title>
+</head>
+<body>
+  <div class="sidebar collapsed" id="sidebar">
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+    <h2>StockStoneTrades</h2>
+    <div>
+      <label>Symbol:</label>
+      <select id="symbolSelect" onchange="updateChart()">
+        <option value="NASDAQ:AAPL">NASDAQ:AAPL</option>
+        <option value="BINANCE:BTCUSDT">BTC/USDT</option>
+        <option value="FX:EURUSD">EUR/USD</option>
+        <option value="FX:GBPUSD">GBP/USD</option>
+        <option value="FX:USDJPY">USD/JPY</option>
+      </select>
+    </div>
+    <div>
+      <label>Currency:</label>
+      <select id="currencySelect" onchange="updateCurrency()">
+        <option value="USD">USD</option>
+        <option value="GBP">GBP</option>
+      </select>
+    </div>
+    <div>
+      <label>Risk/Reward:</label>
+      <div id="riskRewardDisplay">1:2</div>
+    </div>
+    <div>
+      <button onclick="undoAction()">Undo</button>
+      <button onclick="redoAction()">Redo</button>
+    </div>
+  </div>
+  <div class="chart-container" id="chartContainer">
+    <div id="tradingview_chart"></div>
+  </div>
+  <script src="https://s3.tradingview.com/tv.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

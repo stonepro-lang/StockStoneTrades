@@ -1,0 +1,6 @@
+body { margin: 0; font-family: Arial, sans-serif; background-color: #0d1b2a; color: #e0e1dd; }
+.sidebar { position: fixed; top: 0; left: 0; background-color: #1b263b; width: 250px; height: 100%; padding: 10px; overflow-y: auto; transition: transform 0.3s ease; }
+.sidebar.collapsed { transform: translateX(-200px); }
+.toggle-btn { background: none; border: none; color: #e0e1dd; font-size: 20px; cursor: pointer; }
+.chart-container { margin-left: 250px; height: 100vh; }
+.sidebar.collapsed + .chart-container { margin-left: 50px; }
